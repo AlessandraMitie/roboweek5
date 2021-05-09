@@ -5,9 +5,17 @@ Documentation           Ações da funcionalidade de busca de restaurantes
 ${DIV_BOX_RESTAURANT}      css=div[class="place-info-box"][style="opacity: 1;"]
 
 * Keywords *
-Go To Restaurantes
+Go To Restaurants
     Click               text=Estou com fome!
     Get Text            css=h1 strong      contains            Ta na hora de matar a fome!
+
+Choose Restaurant
+    [Arguments]         ${super_var}
+
+    Click               text=${super_var["restaurant"]}
+
+    Wait For Elements State     css=#detail             visible         10
+    Get Text                    css=#detail             contains        ${super_var["description"]}
 
 Search By
     [Arguments]         ${value}
