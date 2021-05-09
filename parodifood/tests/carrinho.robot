@@ -31,7 +31,7 @@ Deve adicionar 3 itens ao carrinho
     # para o robot entender que a variávl é uma lista, alterar o $ por @
     # cada item do json vai retornar na variável product
     FOR     ${product}      IN      @{cart_json["products"]}   
-         Add To Cart                ${product["name"]}
+        Add To Cart                 ${product["name"]}
         Should Add To Cart          ${product["name"]}
     END
 

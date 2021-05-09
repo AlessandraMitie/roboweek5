@@ -6,12 +6,19 @@ Library             OperatingSystem
 
 Resource            actions/search.robot
 Resource            actions/cart.robot
+Resource            actions/order.robot
+
+* Variables *
+${DEFAULT_TIMEOUT}      10
 
 * Keywords *
 Start Session
     New Browser         chromium        False
+    # New Browser         ${browser}        ${headless}
     # O segundo parâmetro: False -> é o headless. Vai rodar por debaixo dos panos?
     New Page            http://parodifood.qaninja.academy/
+    # Resolução mínima para executar os testes
+    Set Viewport Size   1920        1080
     # Checkpoint:
     Get Text            css=span            contains            Nunca foi tão engraçado pedir comida
 

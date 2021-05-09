@@ -1,0 +1,23 @@
+{
+    "restaurant": "DEBUGER KING",
+    "description": "40 anos se espcializando em trash food.",
+    "products": [
+        {
+            "name": "Wooper Burger"
+        },
+        {
+            "name": "Batatas Fritas"
+        },
+        {
+            "name": "Refrigerante"
+        }
+    ],
+    "total": "28,50",
+    "customer": {
+        "name": "Alessandra Mitie",
+        "email": "alessandra@teste.com",
+        "address": "Rua dos Bugs",
+        "number": "1000"
+    },
+    "payment": "Dinheiro"
+}
