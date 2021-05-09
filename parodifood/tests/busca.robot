@@ -1,23 +1,23 @@
 * Settings *
-Library         Browser
+
+Resource            ${EXECDIR}/resources/base.robot
+
+Test Setup          Start Session
+Test Teardown       Take Screenshot
 
 * Test Cases *
-Buscar um restaurante
-    New Browser         chromium        False
-    # O segundo parâmetro: False -> é o headless. Vai rodar por debaixo dos panos?
-    New Page            http://parodifood.qaninja.academy/
-    # Checkpoint:
-    Get Text            css=span            contains            Nunca foi tão engraçado pedir comida
-    
-    Click               text=Estou com fome!
-    Get Text            css=h1 strong      contains            Ta na hora de matar a fome!
-   
-    Click               css=.search-link
-    Fill Text           css=input[formcontrolname="searchControl"]              Debuger
+Deve buscar um único restaurante
+    Go To Restaurantes
+    Search By                       Debuger
+    Restaurant Should Be Visible    DEBUGER KING
+    Restaurant Count Should Be      1    
 
-    Wait For Elements State         css=.place-info-box         visible         10
-    Get Text            css=.place-info-box         contains            DEBUGER KING
+Deve buscar por categoria
+    Go To Restaurantes
+    Search By                       Cafe
+    Restaurant Should Be Visible    STARBUGS COFFEE
 
-    # thinking time
-    Sleep               1
-    Take Screenshot
+Deve buscar todos os restaurantes
+    Go To Restaurantes
+    Search By                       a
+    Restaurant Count Should Be      5
